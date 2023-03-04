@@ -15,8 +15,7 @@ export function bookEndList(numbers: number[]): number[] {
  * number has been tripled (multiplied by 3).
  */
 export function tripleNumbers(numbers: number[]): number[] {
-    const tripled = numbers.map((element: number): number=> element*3);
-    return tripled;
+    return numbers.map((element: number): number=> element*3);
 }
 
 /**
@@ -24,9 +23,8 @@ export function tripleNumbers(numbers: number[]): number[] {
  * the number cannot be parsed as an integer, convert it to 0 instead.
  */
 export function stringsToIntegers(numbers: string[]): number[] {
-    const integers = numbers.map(
+    return numbers.map(
         (str: string): number=> (isNaN(Number(str))) ? 0: Number(str));
-    return integers;
 }
 
 /**
@@ -39,9 +37,8 @@ export function stringsToIntegers(numbers: string[]): number[] {
 export const removeDollars = (amounts: string[]): number[] => {
     const noDollar = amounts.map(
         (str: string): string=> (str[0]==="$") ? str.slice(1): str);
-    const integers = noDollar.map(
+    return noDollar.map(
         (str: string): number=> (isNaN(Number(str))) ? 0: Number(str));
-    return integers;
 };
 
 /**
@@ -54,7 +51,6 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
         (str: string): string=> (str[str.length-1]!=="?"));
     return noQuestion.map(
         (str: string): string=> (str[str.length-1]==="!") ? str.toUpperCase(): str);
-    //return upperCase;
 };
 
 /**
