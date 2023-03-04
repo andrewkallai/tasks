@@ -50,7 +50,7 @@ export const removeDollars = (amounts: string[]): number[] => {
  */
 export const shoutIfExclaiming = (messages: string[]): string[] => {
     const noQuestion = messages.filter(
-        (str: string): string => str[str.length - 1] !== "?"
+        (str: string): boolean => str[str.length - 1] !== "?"
     );
     return noQuestion.map((str: string): string =>
         str[str.length - 1] === "!" ? str.toUpperCase() : str
@@ -62,7 +62,7 @@ export const shoutIfExclaiming = (messages: string[]): string[] => {
  * 4 letters long.
  */
 export function countShortWords(words: string[]): number {
-    const lessThanFour = words.filter((str: string): string => str.length < 4);
+    const lessThanFour = words.filter((str: string): boolean => str.length < 4);
     return lessThanFour.length;
 }
 
