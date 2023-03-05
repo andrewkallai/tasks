@@ -97,14 +97,8 @@ export function toMarkdown(question: Question): string {
  */
 export function renameQuestion(question: Question, newName: string): Question {
     return {
-        id: question.id,
-        name: newName,
-        type: question.type,
-        body: question.body,
-        expected: question.expected,
-        options: question.options,
-        points: question.points,
-        published: question.published
+        ...question,
+        name: newName
     };
 }
 
@@ -115,13 +109,7 @@ export function renameQuestion(question: Question, newName: string): Question {
  */
 export function publishQuestion(question: Question): Question {
     return {
-        id: question.id,
-        name: question.name,
-        type: question.type,
-        body: question.body,
-        expected: question.expected,
-        options: question.options,
-        points: question.points,
+        ...question,
         published: !question.published
     };
 }
@@ -134,13 +122,9 @@ export function publishQuestion(question: Question): Question {
  */
 export function duplicateQuestion(id: number, oldQuestion: Question): Question {
     return {
+        ...oldQuestion,
         id: id,
         name: "Copy of " + oldQuestion.name,
-        type: oldQuestion.type,
-        body: oldQuestion.body,
-        expected: oldQuestion.expected,
-        options: oldQuestion.options,
-        points: oldQuestion.points,
         published: false
     };
 }
@@ -154,14 +138,8 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
  */
 export function addOption(question: Question, newOption: string): Question {
     return {
-        id: question.id,
-        name: question.name,
-        type: question.type,
-        body: question.body,
-        expected: question.expected,
-        options: [...question.options, newOption],
-        points: question.points,
-        published: question.published
+        ...question,
+        options: [...question.options, newOption]
     };
 }
 
