@@ -180,7 +180,12 @@ export function renameQuestionById(
     targetId: number,
     newName: string
 ): Question[] {
-    return [];
+    return questions.map(
+        (question: Question): Question =>
+            question.id === targetId
+                ? { ...question, options: [...question.options], name: newName }
+                : { ...question, options: [...question.options] }
+    );
 }
 
 /***
