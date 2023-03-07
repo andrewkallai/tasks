@@ -252,7 +252,7 @@ export function duplicateQuestionInArray(
     targetId: number,
     newId: number
 ): Question[] {
-    const copy: Questions[] = questions.map(
+    const copy: Question[] = questions.map(
         (question: Question): Question => ({
             ...question,
             options: [...question.options]
