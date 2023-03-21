@@ -11,7 +11,7 @@ export function CheckAnswer({
     }
     return (
         <div>
-            <Form.Group controlId="formMovieName">
+            <Form.Group>
                 <Form.Label>
                     <h3>Check Answer</h3>
                 </Form.Label>
